@@ -1,0 +1,410 @@
+/* أنماط صفحة الخدمات */
+.page-header {
+    position: relative;
+    padding: 140px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #1a1a2e;
+    overflow: hidden;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header h1 span {
+    color: #2962FF;
+    position: relative;
+}
+
+.page-header h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #E100FF;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.header-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+}
+
+.header-wave path {
+    fill: white;
+}
+
+.main-services {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 span {
+    color: #2962FF;
+}
+
+.section-header p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(41, 98, 255, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(41, 98, 255, 0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(41, 98, 255, 0.1) 0%, rgba(225, 0, 255, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #2962FF;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background: linear-gradient(135deg, #2962FF 0%, #E100FF 100%);
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.service-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.service-features i {
+    color: #2962FF;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    color: #2962FF;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.service-link i {
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover {
+    color: #E100FF;
+}
+
+.service-link:hover i {
+    transform: translateX(-5px);
+}
+
+.service-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #2962FF 0%, #E100FF 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-wave {
+    transform: scaleX(1);
+}
+
+.work-process {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2962FF 0%, #E100FF 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #1a1a2e;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.step-arrow {
+    color: #2962FF;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    opacity: 0.5;
+}
+
+.faq-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: none;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f5f7fa;
+}
+
+.faq-question i {
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.faq-answer p {
+    padding: 0 20px 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2962FF 0%, #1A4FD3 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #2962FF;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #f5f7fa;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* تأثيرات الحركة */
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="fade-down"].aos-animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 150px 0 60px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .step-number {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    
+    .step-arrow {
+        display: none;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+}

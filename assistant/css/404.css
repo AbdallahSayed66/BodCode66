@@ -1,0 +1,25 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    text-align: center;
+}
+
+.error-content h1 {
+    font-size: 8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.error-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
