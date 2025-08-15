@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن الشركة - BodCode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* الأساسيات */
+        :root {
+            --primary-color: #2962FF;
+            --secondary-color: #E100FF;
+            --dark-color: #1A1A2E;
+            --light-color: #F1F1F1;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        /* شريط التنقل */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: var(--dark-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* الأقسام العامة */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* قسم عن الشركة */
+        .about {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1A4FD3 100%);
+            color: white;
+        }
+
+        .about .section-title {
+            color: white;
+        }
+
+        .about .section-title span {
+            color: var(--secondary-color);
+        }
+
+        .about-content {
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .mission-box,
+        .vision-box {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            margin: 0.5rem;
+        }
+
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* قسم فريق العمل */
+        .team {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .member-image {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(41, 98, 255, 0.1);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(41, 98, 255, 0.8);
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .social-links {
+            transform: translateY(0);
+        }
+
+        .social-links a {
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .position {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* قسم التقنيات */
+        .technologies {
+            padding: 5rem 0;
+            background-color: #f5f7fa;
+        }
+
+        .tech-slider {
+            display: flex;
+            overflow: hidden;
+            margin: 2rem auto;
+            width: 100%;
+            position: relative;
+        }
+
+        .tech-slide {
+            flex: 0 0 auto;
+            width: 120px;
+            height: 120px;
+            margin: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-slide img {
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .tech-slide:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* الأزرار */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(41, 98, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #1a4fd3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(41, 98, 255, 0.4);
+        }
+
+        /* تأثيرات الحركة */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(20px);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* الفوتر */
+        .modern-footer {
+            position: relative;
+            background-color: #1a1a2e;
+            color: #fff;
+            padding-top: 6rem;
+            overflow: hidden;
+        }
+
+        .footer-waves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            transform: rotate(180deg);
+        }
+
+        .wave-shape {
+            fill: rgba(41, 98, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 0 15px;
+        }
+
+        .logo-col {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2962FF 0%, #E100FF 100%);
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        .logo-text span {
+            color: #2962FF;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #2962FF 0%, #E100FF 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(41, 98, 255, 0.3);
+        }
+
+        .footer-title {
+            position: relative;
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #2962FF 0%, #E100FF 100%);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            margin-left: 8px;
+            font-size: 0.8rem;
+            color: #2962FF;
+        }
+
+        .footer-contact {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            color: #2962FF;
+            margin-left: 10px;
+            margin-top: 3px;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact span {
+            color: rgba(255, 255, 255, 0.7);
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-copyright span {
+            color: #2962FF;
+            font-weight: 600;
+        }
+
+        .footer-legals {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legals a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-legals a:hover {
+            color: #2962FF;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2962FF 0%, #E100FF 100%);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(41, 98, 255, 0.3);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(41, 98, 255, 0.4);
+        }
+
+        .footer-copyright1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            color: #fff;
+            background: linear-gradient(135deg, #2962FF 0%, #E100FF 100%);
+            padding: 15px;
+            text-align: center;
+            border-top: 2px solid rgba(255,255,255,0.2);
+            letter-spacing: 1px;
+            box-shadow: 0 -2px 15px rgba(0,0,0,0.6);
+        }
+
+        .footer-copyright1 span {
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px rgba(255,255,255,0.6), 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .footer-copyright1:hover span {
+            color: #9fa9e6;
+            text-shadow: 0 0 8px #0044ff, 0 0 15px #1900ff;
+            transition: all 0.3s ease;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .tech-slider {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .tech-slide {
+                width: 80px;
+                height: 80px;
+                margin: 0.5rem;
+            }
+
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .logo-col {
+                max-width: 100%;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-legals {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+     <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Bod<span>Code</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="service.html">الخدمات</a></li>
+                <li><a href="portofilo.html">أعمالنا</a></li>
+                <li><a href="about.html">عن الشركة</a></li>
+                <li><a href="contant.html">اتصل بنا</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم عن الشركة -->
+    <section class="about" style="padding-top: 8rem;">
+        <div class="container">
+            <h2 class="section-title">تعرف على <span>شركتنا</span></h2>
+            
+            <div class="flex about-content">
+                <div class="about-text">
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        تأسست شركة BodCode عام 2015 بهدف تقديم حلول تقنية متكاملة تلبي احتياجات السوق الرقمي المتسارع النمو. بدأنا برحلة صغيرة بفريق مكون من 3 أفراد، وها نحن اليوم نضم أكثر من 50 موظفًا من الموهوبين والمختصين في مختلف مجالات التكنولوجيا.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        نؤمن في BodCode بأن الجودة والابتكار هما أساس النجاح في عالم التكنولوجيا، لذلك نحرص على تقديم حلول متميزة تلبي توقعات عملائنا وتتجاوزها، مع الحفاظ على أعلى معايير الجودة والأداء.
+                    </p>
+                    <div class="flex" style="gap: 1.5rem; margin-top: 2rem;">
+                        <div class="mission-box">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 1rem;"><i class="fas fa-bullseye" style="margin-left: 0.5rem;"></i> رؤيتنا</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">
+                                أن نكون الشركة الرائدة في تقديم الحلول التقنية المبتكرة في المنطقة.
+                            </p>
+                        </div>
+                        <div class="vision-box">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 1rem;"><i class="fas fa-eye" style="margin-left: 0.5rem;"></i> رسالتنا</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">
+                                تقديم حلول تقنية عالية الجودة تساعد عملائنا على النمو والازدهار في العصر الرقمي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="فريق BodCode">
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat fade-in" data-aos="fade-up">
+                    <span class="counter" data-target="150">0</span>
+                    <span>مشروع مكتمل</span>
+                </div>
+                <div class="stat fade-in" data-aos="fade-up" data-aos-delay="100">
+                    <span class="counter" data-target="50">0</span>
+                    <span>موظف مبدع</span>
+                </div>
+                <div class="stat fade-in" data-aos="fade-up" data-aos-delay="200">
+                    <span class="counter" data-target="85">0</span>
+                    <span>عميل راضٍ</span>
+                </div>
+                <div class="stat fade-in" data-aos="fade-up" data-aos-delay="300">
+                    <span class="counter" data-target="8">0</span>
+                    <span>سنوات من الخبرة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">فريق <span>العمل</span></h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">
+                فريقنا المكون من خبراء ومطورين مبدعين هم سر تميزنا ونجاحنا في تقديم حلول تقنية استثنائية.
+            </p>
+
+            <div class="team-grid">
+                <!-- عضو الفريق 1 -->
+                <div class="team-member fade-in" data-aos="fade-up">
+                    <div class="member-image">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="أحمد محمد">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>أحمد محمد</h3>
+                    <p class="position">المدير التنفيذي</p>
+                    <p class="bio">
+                        أكثر من 15 عامًا من الخبرة في إدارة المشاريع التقنية وقيادة الفرق.
+                    </p>
+                </div>
+
+                <!-- عضو الفريق 2 -->
+                <div class="team-member fade-in" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-image">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="سارة عبدالله">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>سارة عبدالله</h3>
+                    <p class="position">مديرة التصميم</p>
+                    <p class="bio">
+                        مصممة واجهات مستخدم مبدعة مع خبرة في أحدث اتجاهات UI/UX.
+                    </p>
+                </div>
+
+                <!-- عضو الفريق 3 -->
+                <div class="team-member fade-in" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="خالد سعيد">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>خالد سعيد</h3>
+                    <p class="position">كبير المطورين</p>
+                    <p class="bio">
+                        خبير في تطوير الويب والتطبيقات بأحدث التقنيات وأفضل الممارسات.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التقنيات -->
+    <section class="technologies">
+        <div class="container">
+            <h2 class="section-title">التقنيات التي <span>نستخدمها</span></h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">
+                نعمل بأحدث التقنيات والأدوات لضمان تقديم منتجات عالية الجودة تلبي احتياجات العصر الرقمي.
+            </p>
+
+            <div class="tech-slider">
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="HTML5">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS3">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="JavaScript">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/nodejs-1.svg" alt="Node.js">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django">
+                </div>
+                <div class="tech-slide">
+                    <img src="https://cdn.worldvectorlogo.com/logos/flutter.svg" alt="Flutter">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="modern-footer">
+        <!-- <div class="footer-waves">
+            <svg class="wave-shape" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+            </svg>
+        </div> -->
+        
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-col logo-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">Bod<span>Code</span></span>
+                        <div class="logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        نقدم حلولاً تقنية مبتكرة تلبي احتياجات عملك في العصر الرقمي، بجودة عالية وأسعار تنافسية.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية <i class="fas fa-arrow-left"></i></a></li>
+                        <li><a href="about.html">عن الشركة <i class="fas fa-arrow-left"></i></a></li>
+                        <li><a href="portfolio.html">أعمالنا <i class="fas fa-arrow-left"></i></a></li>
+                        <li><a href="contact.html">اتصل بنا <i class="fas fa-arrow-left"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">خدماتنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">تطوير المواقع <i class="fas fa-arrow-left"></i></a></li>
+                        <li><a href="#">تطبيقات الجوال <i class="fas fa-arrow-left"></i></a></li>
+                        <li><a href="#">تصميم UI/UX <i class="fas fa-arrow-left"></i></a></li>
+                        <li><a href="#">التسويق الرقمي <i class="fas fa-arrow-left"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">اتصل بنا</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>123 شارع الأعمال، الرياض، المملكة العربية السعودية</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <span>+966 12 345 6789</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>info@bodcode.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">جميع الحقوق محفوظة &copy; <span>BodCode</span> 2023</p>
+                <div class="footer-legals">
+                    <a href="#">شروط الخدمة</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="footer-copyright1">
+        تم التطوير بواسطة <span>BodCode</span> | كل الحقوق محفوظة
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+
+        // Toggle mobile menu
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>

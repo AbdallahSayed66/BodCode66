@@ -1,0 +1,134 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    direction: rtl;
+}
+
+/* Navbar */
+header {
+    background: linear-gradient(90deg, #2962FF, #E100FF);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+header nav a:hover {
+    opacity: 0.8;
+}
+
+/* عنوان الصفحة */
+.page-title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 28px;
+    color: #2962FF;
+}
+
+/* فورم التواصل */
+.contact-form {
+    max-width: 700px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 15px;
+    transition: border 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2962FF;
+    outline: none;
+}
+.contact-form button {
+    background: linear-gradient(90deg, #2962FF, #E100FF);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.contact-form button:hover {
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+    .contact-form {
+        width: 90%;
+    }
+}
+.social-media h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.social-media .flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #2962FF, #E100FF);
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.social-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
