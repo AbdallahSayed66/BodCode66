@@ -306,4 +306,27 @@ document.addEventListener('DOMContentLoaded', function() {
             this.querySelector('i').style.transform = 'translateX(0)';
         });
     });
+
+});
+// خريطة الروابط الحقيقية
+const pageMap = {
+    "h1a2b3": "index.html",
+    "c4d5e6": "service.html",
+    "f7g8h9": "portofilo.html",
+    "i1j2k3": "about.html",
+    "l4m5n6": "contant.html"
+};
+
+// ربط كل الرابط مع الحدث
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function(e){
+        e.preventDefault(); // يمنع الرابط الافتراضي
+        const code = this.getAttribute("data-code");
+        const page = pageMap[code];
+        if(page){
+            window.location.href = page; // التوجيه للصفحة الحقيقية
+        } else {
+            alert("الرابط غير موجود");
+        }
+    });
 });
